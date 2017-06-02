@@ -4,8 +4,6 @@
 
 export TERM="xterm-256color"
 
-# added by Anaconda3 4.3.1 installer
-export PATH="/Users/adamw/anaconda/bin:$PATH"
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
