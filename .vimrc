@@ -79,6 +79,5 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 " For YouCompleteMe
-let g:ycm_python_binary_path = '/usr/bin/python3'
+let g:ycm_python_binary_path = 'python'
 let g:ycm_autoclose_preview_window_after_insertion = 1
-let g:syntastic_java_javac_classpath = "~/Documents/Code/metapop/build/classes/framework:~/Documents/Code/metapop/lib/junit-4.11.jar"
