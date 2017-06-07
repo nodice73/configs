@@ -11,8 +11,9 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/syntastic'
-" Plugin 'vim-scripts/indentpython'
 Plugin 'hdima/python-syntax'
+Plugin 'majutsushi/tagbar'
+" Plugin 'vim-scripts/indentpython'
 " Plugin 'SirVer/ultisnips'
 
 " All of your Plugins must be added before the following line
