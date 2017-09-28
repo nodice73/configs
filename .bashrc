@@ -7,8 +7,12 @@ export TERM="xterm-256color"
 # added by Anaconda3 4.3.1 installer
 export PATH="/Users/adamw/anaconda/bin:$PATH"
 
+export PYTHONPATH="/Users/adamw/Code/nodice73/powerwave"
+
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
+
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 
 # don't put duplicate lines in the history. See bash(1) for more options
 export HISTCONTROL=ignoredups
