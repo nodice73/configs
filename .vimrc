@@ -9,11 +9,11 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-" Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/syntastic'
-" Plugin 'vim-scripts/indentpython'
 Plugin 'hdima/python-syntax'
 " Plugin 'SirVer/ultisnips'
+" Plugin 'vim-scripts/indentpython'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -66,9 +66,13 @@ set modeline
 set modelines=1
 
 au BufNewFile,BufRead *.html set filetype=htmldjango
+au BufNewFile,BufRead *.wsgi set filetype=python
 au BufNewFile,BufRead *.md set filetype=markdown
+au BufNewFile,BufRead *.conf set filetype=apache
 
 " For syntastic
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [], 'passive_filetypes': [] }
+noremap <C-w>E :SyntasticCheck<CR> :SyntasticToggleMode<CR>
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -78,7 +82,9 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+let g:syntastic_perl_checkers = ['perl']
+let g:syntastic_enable_perl_checker = 1
+
 " For YouCompleteMe
 let g:ycm_python_binary_path = '/usr/bin/python3'
 let g:ycm_autoclose_preview_window_after_insertion = 1
-let g:syntastic_java_javac_classpath = "~/Documents/Code/metapop/build/classes/framework:~/Documents/Code/metapop/lib/junit-4.11.jar"
