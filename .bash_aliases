@@ -1,1 +1,2 @@
-alias ll='ls -alG'
+alias ll='ls -alh'
+alias vim='~/bin/vim'
