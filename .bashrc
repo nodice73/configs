@@ -3,6 +3,8 @@
 # for examples
 
 export TERM="xterm-256color"
+export EDITOR="~/bin/vim"
+export PYTHONPATH="/home/adamw/code/nodice73"
 
 
 # If not running interactively, don't do anything
