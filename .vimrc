@@ -6,15 +6,10 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
-
 " let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'scrooloose/syntastic'
-Plugin 'hdima/python-syntax'
-Plugin 'majutsushi/tagbar'
-" Plugin 'vim-scripts/indentpython'
-" Plugin 'SirVer/ultisnips'
+ Plugin 'VundleVim/Vundle.vim'
+ Plugin 'Valloric/YouCompleteMe'
+ Plugin 'majutsushi/tagbar'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -31,8 +26,10 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
+
 imap ii <Esc>
 map <F3> :w !detex \| wc -w<CR>
+nmap <F8> :TagbarToggle<CR>
 syntax on
 
 let python_highlight_all=1
@@ -49,7 +46,7 @@ else
     color distinguished
 endif
 
-set columns=83
+set columns=79
 set showmatch
 set number
 set incsearch
@@ -69,18 +66,6 @@ set modelines=1
 au BufNewFile,BufRead *.html set filetype=htmldjango
 au BufNewFile,BufRead *.md set filetype=markdown
 
-" For syntastic
-let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [], 'passive_filetypes': [] }
-nnoremap <C-w>E :SyntasticCheck<CR> :SyntasticToggleMode<CR>
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
 " For YouCompleteMe
-let g:ycm_python_binary_path = 'python'
+let g:ycm_python_binary_path = '/usr/bin/python3'
 let g:ycm_autoclose_preview_window_after_insertion = 1
