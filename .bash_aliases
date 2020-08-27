@@ -1,2 +1,1 @@
-alias ll='ls -alh'
-alias vim='~/bin/vim'
+alias ll='ls -alh --color=auto'
