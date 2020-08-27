@@ -10,6 +10,7 @@ call vundle#begin()
  Plugin 'VundleVim/Vundle.vim'
  Plugin 'Valloric/YouCompleteMe'
  Plugin 'majutsushi/tagbar'
+ Plugin 'vim-python/python-syntax'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -46,7 +47,8 @@ else
     color distinguished
 endif
 
-set columns=79
+set columns=83
+set numberwidth=4
 set showmatch
 set number
 set incsearch
@@ -69,3 +71,6 @@ au BufNewFile,BufRead *.md set filetype=markdown
 " For YouCompleteMe
 let g:ycm_python_binary_path = '/usr/bin/python3'
 let g:ycm_autoclose_preview_window_after_insertion = 1
+
+" For tagbar
+let g:tagbar_expand = 2
