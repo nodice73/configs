@@ -4,7 +4,10 @@
 
 export TERM="xterm-256color"
 export EDITOR="~/bin/vim"
-export PYTHONPATH="/home/adamw/code/nodice73"
+export PYTHONPATH="/home/adamw/code":"/home/adamw/code/yeast_lifespan_machine"
+export PATH=/home/adamw/node/node-v10.15.3-linux-x64/bin:$PATH
+
+export GOOGLE_APPLICATION_CREDENTIALS="/home/adamw/token.json"
 
 
 # If not running interactively, don't do anything
@@ -54,4 +57,19 @@ PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\[\033[00;36m\]\h\[\033
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/adamw/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/adamw/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/adamw/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/adamw/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
 
