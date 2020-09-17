@@ -9,8 +9,10 @@ call vundle#begin()
 " let Vundle manage Vundle, required
  Plugin 'VundleVim/Vundle.vim'
  Plugin 'Valloric/YouCompleteMe'
- Plugin 'majutsushi/tagbar'
  Plugin 'vim-python/python-syntax'
+ Plugin 'Vimjas/vim-python-pep8-indent'
+ Plugin 'vim-scripts/taglist.vim'
+ Plugin 'nvie/vim-flake8'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -30,7 +32,7 @@ filetype plugin indent on    " required
 
 imap ii <Esc>
 map <F3> :w !detex \| wc -w<CR>
-nmap <F8> :TagbarToggle<CR>
+nmap <F8> :TlistToggle<CR>
 syntax on
 
 let python_highlight_all=1
@@ -71,6 +73,3 @@ au BufNewFile,BufRead *.md set filetype=markdown
 " For YouCompleteMe
 let g:ycm_python_binary_path = '/usr/bin/python3'
 let g:ycm_autoclose_preview_window_after_insertion = 1
-
-" For tagbar
-let g:tagbar_expand = 2
