@@ -70,6 +70,10 @@ set modelines=1
 au BufNewFile,BufRead *.html set filetype=htmldjango
 au BufNewFile,BufRead *.md set filetype=markdown
 
+" TagList
+let Tlist_WinWidth = 40
+
 " For YouCompleteMe
 let g:ycm_python_binary_path = '/usr/local/bin/python3'
 let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_auto_hover=''
