@@ -4,10 +4,9 @@
 
 export TERM="xterm-256color"
 export EDITOR="~/bin/vim"
-export PYTHONPATH="/home/adamw/code":"/home/adamw/code/yeast_lifespan_machine"
+export PYTHONPATH="/home/adamw/code":"/home/adamw/code/nhthayer":"/home/adamw/code/yeast_lifespan_machine"
 export PATH=/home/adamw/node/node-v10.15.3-linux-x64/bin:$PATH
-
-export GOOGLE_APPLICATION_CREDENTIALS="/home/adamw/token.json"
+export GOOGLE_APPLICATION_CREDENTIALS="/home/adamw/.config/credentials/yeast-lifespan-machine-archive-9ded2b4f0496.foradam.json"
 
 
 # If not running interactively, don't do anything
@@ -58,18 +57,15 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/adamw/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+# >>> mamba initialize >>>
+# !! Contents within this block are managed by 'micromamba shell init' !!
+export MAMBA_EXE='/home/adamw/.local/bin/micromamba';
+export MAMBA_ROOT_PREFIX='/home/adamw/micromamba';
+__mamba_setup="$("$MAMBA_EXE" shell hook --shell bash --root-prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
 if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
+    eval "$__mamba_setup"
 else
-    if [ -f "/home/adamw/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/adamw/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/adamw/miniconda3/bin:$PATH"
-    fi
+    alias micromamba="$MAMBA_EXE"  # Fallback on help from micromamba activate
 fi
-unset __conda_setup
-# <<< conda initialize <<<
-
+unset __mamba_setup
+# <<< mamba initialize <<<
