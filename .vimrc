@@ -1,38 +1,17 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'vim-python/python-syntax'
-" Plugin 'Vimjas/vim-python-pep8-indent'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'majutsushi/tagbar'
-" Plugin 'scrooloose/syntastic'
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
+call plug#begin()
+Plug 'junegunn/vim-plug'
+Plug 'vim-scripts/taglist.vim'
+Plug 'vim-python/python-syntax'
+Plug 'nvie/vim-flake8'
+Plug 'Valloric/YouCompleteMe'
+call plug#end()            " required
 
 imap ii <Esc>
 map <F3> :w !detex \| wc -w<CR>
-nmap <F8> :TagbarToggle<CR>
+nmap <F8> :TlistToggle<CR>
 syntax on
 
 
@@ -74,21 +53,6 @@ au BufNewFile,BufRead *.conf set filetype=apache
 " For python-syntax
 let g:python_highlight_all=1
 
-" For syntastic
-"let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [], 'passive_filetypes': [] }
-"noremap <C-w>E :SyntasticCheck<CR> :SyntasticToggleMode<CR>
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
-"
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_open = 1
-"let g:syntastic_check_on_wq = 0
-"
-"let g:syntastic_perl_checkers = ['perl']
-"let g:syntastic_enable_perl_checker = 1
-"
 " For YouCompleteMe
-let g:ycm_python_binary_path = '/home/adamw/miniconda3/bin/python3'
+let g:ycm_python_binary_path = '/scratch3/adamw/miniconda3/bin/python3'
 let g:ycm_autoclose_preview_window_after_insertion = 1
